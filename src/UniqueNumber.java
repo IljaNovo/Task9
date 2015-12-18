@@ -5,4 +5,8 @@ public class UniqueNumber {
     public static int generate() {
         return id++;
     }
+
+    public static void resetCounter() {
+        id = 0;
+    }
 }

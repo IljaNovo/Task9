@@ -30,7 +30,15 @@ public class CircleOfPeople<E> {
         if (index < 0 || index > persons.size() - 1) {
             throw new IndexOutOfBoundsException();
         }
-        return persons.get(index);
+        Person pers = null;
+
+        try {
+            pers = persons.get(index).clone();
+        }
+        catch (CloneNotSupportedException e) {
+            e.getStackTrace();
+        }
+        return pers;
     }
 
     public boolean deleteSecond() {
