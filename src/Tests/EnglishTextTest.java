@@ -5,7 +5,7 @@ public class EnglishTextTest {
 
     @Test
     public void testFindUniqWords() throws Exception {
-        EnglishText et = new EnglishText("Hello");
+        EnglishText et = new EnglishText("Hello hello world");
 
         et.findUniqWords();
 
