@@ -6,14 +6,20 @@ import java.util.Map;
 public class EnglishTextTest {
 
     @Test
-    public void testFindUniqWords() throws Exception {
+    public void testFrequencyWords() throws Exception {
         EnglishText et = new EnglishText("Hello hello world");
 
         Map<String, Integer> frequencyWords = et.frequency();
 
-        int count = frequencyWords.get("Hello");
+        Assert.assertEquals(frequencyWords.get("Hello").intValue(), 2);
+        Assert.assertEquals(frequencyWords.get("world").intValue(), 1);
+    }
 
-        //Assert.assertEquals(frequencyWords.get("Hello"), 2);
-        Assert.assertTrue(true);
+    @Test
+    public void testEmptyText() throws Exception {
+        EnglishText et = new EnglishText("");
+
+        Assert.assertEquals(et.findUniqWords().size(), 0);
+        Assert.assertEquals(et.frequency().size(), 0);
     }
 }

@@ -6,7 +6,7 @@ public class EnglishText {
 
     public EnglishText(String text) {
         if (text == null) {
-            text = "";
+            text = " ";
         }
         this.text = text;
     }
@@ -15,7 +15,8 @@ public class EnglishText {
         HashSet<String> uniqWords = new HashSet<>();
         String[] words = text.split(" ");
 
-        if (words.length == 0) {
+        if (words.length == 0 ||
+                (words.length == 1 && words[0] == "")) {
             return uniqWords;
         }
 
